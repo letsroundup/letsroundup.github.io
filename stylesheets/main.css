@@ -1,0 +1,117 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.main-container {
+  height: 100vh;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+  -webkit-justify-content:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.logo-container {
+  position: relative;
+}
+
+.logo-shape {
+  -webkit-animation: rotation 4s infinite ease-in-out;
+          animation: rotation 4s infinite ease-in-out;
+  -webkit-transform-origin: 50% 56%;
+      -ms-transform-origin: 50% 56%;
+          transform-origin: 50% 56%;
+}
+
+@-webkit-keyframes rotation {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+  to   {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+@keyframes rotation {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+  to   {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+.logo-text {
+  position: absolute;
+  top: 78px;
+  left: 46px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-animation: opac 4s infinite ease-in-out;
+          animation: opac 4s infinite ease-in-out;
+}
+
+@-webkit-keyframes opac {
+  0% { opacity: 1; filter: alpha(opacity=100);}
+  30% { opacity: 0; filter: alpha(opacity=0);}
+  70% { opacity: 0; filter: alpha(opacity=0);}
+  100% { opacity: 1; filter: alpha(opacity=100);}
+}
+
+.code-stuff {
+  position: relative;
+  top: 40px;
+  left: 8px;
+  font-family: 'Anonymous Pro';
+}
