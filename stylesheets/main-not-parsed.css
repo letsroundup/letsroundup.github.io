@@ -53,7 +53,8 @@ button {
 
 /* Global */
 html, body {
-  height:100%;
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -125,14 +126,57 @@ input:focus {
   background-image: linear-gradient(180deg, #3273de 0%, #5057ad 100%);
 }
 
+#hand, #header {
+  visibility: hidden;
+}
+
 /* End form */
+
+/* Images */
+.hand-container {
+  background: url("../images/hand.png") no-repeat;
+  background-size: contain;
+  width: 100%;
+  /* height: auto; */
+}
+
+.header-container {
+  background: url("../images/header.jpg") no-repeat;
+  background-size: contain;
+}
+
+@media screen and (min-resolution: 2dppx) {
+  .hand-container {
+    background: url("../images/hand@2x.png") no-repeat;
+  }
+
+  .header-container {
+    background: url("../images/header@2x.jpg") no-repeat;
+  }
+}
+
+@media screen and (min-resolution: 3dppx) {
+  .hand-container {
+    background: url("../images/hand@3x.png") no-repeat;
+  }
+
+  .header-container {
+    background: url("../images/header@3x.jpg") no-repeat;
+  }
+}
+
+/* End images */
 
 /* mobile format */
 @media screen and (max-width:767px) {
   .header-container {
+    background: url("../images/header-small.png") no-repeat;
     overflow:hidden;
   }
 
+  .text-container-header {
+    display: none;
+  }
   /* Text */
   .text-container {
     padding-top: 20px;
@@ -156,16 +200,19 @@ input:focus {
   }
 
   .hand-container {
-    padding: 20px 20px 0 20px;
-  }
-
-  #hand {
+    margin: 20px 20px 0 20px;
     width: 70%;
     height: auto;
   }
 
+  #hand {
+    width: 100%;
+    height: auto;
+  }
+
   .logo-container {
-    padding: 20px 20px 0 20px;
+    width: 20%;
+    height: auto;
   }
 
   #logo {
@@ -187,14 +234,10 @@ input:focus {
     display: flex;
   }
 
-  #form > * {
-    line-height: 40px;
-  }
-
   #response {
     padding-top: 15px;
     font-weight: 600;
-    font-size: 4vw;
+    font-size: 2em;
   }
 
   .header-container {
@@ -212,16 +255,19 @@ input:focus {
   }
 
   input {
-    padding-left: 0.5em;
+    flex: 1;
     margin-left: 25px;
     margin-right: 2px;
-    font-size: 1vmax;
+    font-size: 1em;
+    padding: 0.8em 1.3em 0.8em 1.3em;
   }
 
   .button {
+    flex: 1;
     margin-right: 25px;
     margin-left: 2px;
-    font-size: 1vmax;
+    font-size: 1em;
+    padding: 0.8em 1.3em 0.8em 1.3em;
   }
 
   #response > span {
@@ -242,14 +288,6 @@ input:focus {
     flex-direction: column;
   }
 
-  input {
-    font-size: 2.5vmax;
-  }
-
-  .button {
-    font-size: 2.5vmax;
-  }
-
   #form > * {
     margin: 10px 45px 0 45px;
   }
@@ -259,27 +297,15 @@ input:focus {
   #form {
     flex-direction: row;
   }
-
-  input {
-    flex: 1;
-    margin-right: 2px;
-    font-size: 1.8vmax;
-  }
-
-  .button {
-    flex: 1;
-    margin-left: 2px;
-    font-size: 1.8vmax;
-  }
 }
 
 @media screen and (min-width:600px) and (max-width:767px) {
   input {
-    margin-left: 90px;
+    margin-left: 70px;
   }
 
   .button {
-    margin-right: 90px;
+    margin-right: 70px;
   }
 }
 /* End form twicking */
@@ -308,7 +334,8 @@ input:focus {
     height: auto;
   }
 
-  #hand {
+  .hand-container {
+    background-position: left bottom;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -333,28 +360,54 @@ input:focus {
 
   .text-container {
     display: none;
-    visibility: hidden;
+  }
+
+  .header-container {
+    position: relative;
+  }
+
+  .text-container-header {
+    white-space: nowrap;
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    color: white;
+    height: auto;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .text-header {
+    width: 100%;
+    height: auto;
+    font-size: 2em;
+  }
+
+  .star-header {
+    font-size: 1.5em;
   }
 
   #response {
     padding-top: 10px;
     font-weight: 600;
-    font-size: 2vw;
+    font-size: 1em;
     position: absolute;
     width: 100%;
   }
 
   input {
-    padding-left: 1em;
+    flex: 1;
+    padding-left: 0.5em;
     margin-right: 2px;
-    font-size: 2vmax;
-    padding: 1vmax 2vmax 1vmax 2vmax;
+    font-size: 20px;
+    padding: 20px 35px 20px 35px;
   }
 
   .button {
+    flex: 1;
     margin-left: 2px;
-    font-size: 2vmax;
-    padding: 1vmax 2vmax 1vmax 2vmax;
+    font-size: 20px;
+    padding: 20px 35px 20px 35px;
   }
 
   .empty {
@@ -369,28 +422,24 @@ input:focus {
 
 /* Tablet format */
 @media screen and (min-width:768px) and (max-width:1023px) {
-  #hand {
+  .hand-container {
     width: 35%;
   }
 
   #logo {
-    margin-left: 150px;
+    margin-left: 20%;
   }
 }
 /* End Tablet format */
 
 /* Desktop format */
 @media screen and (min-width:1024px) {
-  #hand {
+  .hand-container {
     width: 25%;
   }
 
   #logo {
-    margin-left: 200px;
+    margin-left: 20%;
   }
 }
 /* End Desktop format */
-
-@media screen and (min-width : 1224px) {
-
-}
