@@ -87,6 +87,9 @@ input:focus {
 /* Images */
 .hand-container {
   background: url("../images/hand.png") no-repeat bottom left / contain;
+}
+
+.hand-container img {
   width: 100%;
 }
 
@@ -137,10 +140,6 @@ input:focus {
   .star {
     padding-top: 5px;
     font-size: 4vw;
-  }
-
-  .form-container {
-    padding-top: 20px;
   }
 
   #header {
@@ -198,7 +197,7 @@ input:focus {
     left: 0;
     right: 0;
     margin: auto;
-    height: 50%;
+    height: 47%;
     width: auto;
   }
 
@@ -239,6 +238,10 @@ input:focus {
 @media screen and (min-width:500px) and (max-width:767px) {
   #form {
     flex-direction: row;
+  }
+
+  .form-container {
+    padding-top: 20px;
   }
 }
 
@@ -357,9 +360,9 @@ input:focus {
   input {
     padding-left: 0.5em;
   }
+
   .button {
     margin-left: 2px;
-
   }
 
   .empty {
@@ -374,7 +377,7 @@ input:focus {
 
 /* Tablet format */
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .hand-container img {
+  .hand-container {
     width: 35%;
   }
 
@@ -386,7 +389,7 @@ input:focus {
 
 /* Desktop format */
 @media screen and (min-width:1024px) {
-  .hand-container img {
+  .hand-container {
     width: 30%;
   }
 
@@ -396,7 +399,7 @@ input:focus {
 }
 
 @media screen and (min-width: 1440px) {
-  .hand-container img {
+  .hand-container {
     width: 25%;
   }}
 /* End Desktop format */
