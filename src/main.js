@@ -68,7 +68,7 @@ $(document).ready(function() {
 
     var url = 'https://roundup-beta.herokuapp.com/waitingList';
     var phoneNumber = $('#phoneNumber').val();
-    var data = JSON.stringify({ phoneNumber: phoneNumber });
+    $('.button').removeClass('enabled');
 
     var request = $.ajax({
       method: 'POST',
@@ -77,14 +77,16 @@ $(document).ready(function() {
       data: JSON.stringify({ phoneNumber: phoneNumber }),
       success: function(data) {
         if (data && data.msg === 'Already added.') {
-          setError('You\'re already on the waiting list.')
+          setError('You\'re already on the waiting list.');
+          $('.button').addClass('enabled');
         } else {
-          setSuccess('Thanks! We\'ll text you when it\'s your turn.')
+          setSuccess('Thanks! We\'ll text you when it\'s your turn.');
         }
       },
       error: function(data) {
         var text = JSON.parse(data.responseText);
-        setError(text && text.error)
+        setError(text && text.error);
+        $('.button').addClass('enabled');
       }
     });
 
