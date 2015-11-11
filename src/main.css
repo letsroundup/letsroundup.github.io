@@ -1,55 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-button {
-  border: none;
-}
+@import "./reset.css";
 
 /* Global */
 html, body {
@@ -60,7 +9,7 @@ html, body {
 body {
   padding: 0;
   margin: 0;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 img {
@@ -68,24 +17,16 @@ img {
 }
 
 /* Form */
-#response {
-  color: #c3514b;
+.response {
+  /* color: #c3514b; */
+  color: #ce4844;
 }
-
-.success {
-  color: #4bc364 !important;
+.response.success {
+  color: #4bc364;
 }
 
 .hidden {
   display: none;
-}
-
-.error {
-  border-color: #c3514b !important;
-}
-
-.error:focus {
-  box-shadow: 0 0 7px rgba(195, 81, 75, 0.5) !important;
 }
 
 input {
@@ -100,11 +41,23 @@ input:focus {
   background-color: white;
 }
 
+.error {
+  /*
+  border-color: #c3514b;
+  color: #c3514b;
+  */
+  border-color: #ce4844;
+  color: #ce4844;
+}
+
+.error:focus {
+  box-shadow: 0 0 7px rgba(195, 81, 75, 0.5) !important;
+}
+
 .button {
   outline: none;
-  background-image: -webkit-linear-gradient(270deg, #8dace0 0%, #898ece 100%);
   background-image: linear-gradient(180deg, #8dace0 0%, #898ece 100%);
-  border-radius: 6px;
+  border-radius: 3px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   color: white;
   font-weight: 600;
@@ -113,7 +66,6 @@ input:focus {
 .enabled {
   outline: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  background-image: -webkit-linear-gradient(270deg, #598bdf 0%, #5e67d0 100%);
   background-image: linear-gradient(180deg, #598bdf 0%, #5e67d0 100%);
 }
 
@@ -122,7 +74,6 @@ input:focus {
   cursor: pointer;
   cursor: hand;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  background-image: -webkit-linear-gradient(270deg, #3273de 0%, #5057ad 100%);
   background-image: linear-gradient(180deg, #3273de 0%, #5057ad 100%);
 }
 
@@ -137,7 +88,6 @@ input:focus {
   background: url("../images/hand.png") no-repeat;
   background-size: contain;
   width: 100%;
-  /* height: auto; */
 }
 
 .header-container {
@@ -148,20 +98,25 @@ input:focus {
 @media screen and (min-resolution: 2dppx) {
   .hand-container {
     background: url("../images/hand@2x.png") no-repeat;
+    background-size: contain;
+
   }
 
   .header-container {
     background: url("../images/header@2x.jpg") no-repeat;
+    background-size: contain;
   }
 }
 
 @media screen and (min-resolution: 3dppx) {
   .hand-container {
     background: url("../images/hand@3x.png") no-repeat;
+    background-size: contain;
   }
 
   .header-container {
     background: url("../images/header@3x.jpg") no-repeat;
+    background-size: contain;
   }
 }
 
@@ -171,7 +126,7 @@ input:focus {
 @media screen and (max-width:767px) {
   .header-container {
     background: url("../images/header-small.png") no-repeat;
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .text-container-header {
@@ -179,7 +134,8 @@ input:focus {
   }
   /* Text */
   .text-container {
-    padding-top: 20px;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   .text {
@@ -211,8 +167,8 @@ input:focus {
   }
 
   .logo-container {
-    width: 20%;
     height: auto;
+    padding: 0 50px;
   }
 
   #logo {
@@ -234,7 +190,7 @@ input:focus {
     display: flex;
   }
 
-  #response {
+  .response {
     padding-top: 15px;
     font-weight: 600;
     font-size: 2em;
@@ -257,28 +213,23 @@ input:focus {
   input {
     flex: 1;
     margin-left: 25px;
-    margin-right: 2px;
     font-size: 1em;
-    padding: 0.8em 1.3em 0.8em 1.3em;
+    padding: 0.8em 1.3em;
   }
 
   .button {
     flex: 1;
     margin-right: 25px;
-    margin-left: 2px;
     font-size: 1em;
-    padding: 0.8em 1.3em 0.8em 1.3em;
+    padding: 0.8em 1.3em;
+    margin-left: 4px;
   }
 
-  #response > span {
-    background-color: rgba(255,255,255,0.8);
+  .response > span {
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px 10px;
     margin-top: 5px;
-  }
-
-  .success > span{
-    background-color: rgba(255,255,255,0.8) !important;
   }
 }
 
@@ -321,7 +272,7 @@ input:focus {
   .container {
     display: flex;
     flex: 1;
-    min-height: 200px;
+    min-height: 100px;
     position: relative;
   }
 
@@ -367,6 +318,9 @@ input:focus {
   }
 
   .text-container-header {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 10px 15px;
     white-space: nowrap;
     position: absolute;
     top: 20%;
@@ -387,7 +341,7 @@ input:focus {
     font-size: 1.5em;
   }
 
-  #response {
+  .response {
     padding-top: 10px;
     font-weight: 600;
     font-size: 1em;
@@ -395,19 +349,19 @@ input:focus {
     width: 100%;
   }
 
-  input {
+  input, .button {
     flex: 1;
-    padding-left: 0.5em;
     margin-right: 2px;
     font-size: 20px;
-    padding: 20px 35px 20px 35px;
+    padding: 10px 15px;
   }
 
+  input {
+    padding-left: 0.5em;
+  }
   .button {
-    flex: 1;
     margin-left: 2px;
-    font-size: 20px;
-    padding: 20px 35px 20px 35px;
+
   }
 
   .empty {
