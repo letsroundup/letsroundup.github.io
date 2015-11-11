@@ -3,17 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <title>RoundUp Social Inc.</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Right People. Right Time. Right Place.">
-    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-    <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
-    <script type="text/javascript" src="scripts/analytics.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
   </head>
-
   <body>
     <div class="header-container">
+      <div class="text-container-header">
+        <div class="text-header">
+          This will be an expensive night*
+        </div>
+        <div class="star-header">
+          *If you don't use RoundUp
+        </div>
+      </div>
       <img id="header" src="images/header-small.png"/>
       <img id="cellphone" src="images/cellphone.png"/>
     </div>
@@ -33,17 +38,19 @@
             <input type="tel" name="phone" id="phoneNumber" placeholder="Enter phone number" required>
             <button class="button" type="submit">GET EARLY ACCESS</button>
           </form>
-          <div id="response" class="hidden">
+          <div id="form-response" class="response hidden">
             <span>Thanks! We'll text you when it's your turn.</span>
           </div>
         </div>
       </div>
       <div class="hand-container">
-        <img id="hand" src="images/hand.png"/>
+        <img id="hand" src="/images/hand.png"/>
       </div>
       <div class="logo-container">
-        <img id="logo" src="images/logo.png"/>
+        <img id="logo" src="/images/logo.svg"/>
       </div>
     </div>
+    <script type="text/javascript" src="/main.js"></script>
+
   </body>
 </html>
