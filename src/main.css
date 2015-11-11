@@ -18,7 +18,6 @@ img {
 
 /* Form */
 .response {
-  /* color: #c3514b; */
   color: #ce4844;
 }
 .response.success {
@@ -34,6 +33,7 @@ input {
   border: 1px solid #979797;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(0, 0, 0, 0.1);
+  font-variant: small-caps;
 }
 
 input:focus {
@@ -42,10 +42,6 @@ input:focus {
 }
 
 .error {
-  /*
-  border-color: #c3514b;
-  color: #c3514b;
-  */
   border-color: #ce4844;
   color: #ce4844;
 }
@@ -61,6 +57,7 @@ input:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   color: white;
   font-weight: 600;
+  font-variant: small-caps;
 }
 
 .enabled {
@@ -77,6 +74,10 @@ input:focus {
   background-image: linear-gradient(180deg, #3273de 0%, #5057ad 100%);
 }
 
+.cellphone {
+  position: absolute;
+}
+
 #hand, #header {
   visibility: hidden;
 }
@@ -85,38 +86,29 @@ input:focus {
 
 /* Images */
 .hand-container {
-  background: url("../images/hand.png") no-repeat;
-  background-size: contain;
+  background: url("../images/hand.png") no-repeat bottom left / contain;
   width: 100%;
 }
 
 .header-container {
-  background: url("../images/header.jpg") no-repeat;
-  background-size: contain;
+  background: url("../images/header@1x.jpg") no-repeat top left / cover;
 }
 
-@media screen and (min-resolution: 2dppx) {
+@media screen and (min-resolution: 1.3dppx) {
   .hand-container {
-    background: url("../images/hand@2x.png") no-repeat;
-    background-size: contain;
-
+    background: url("../images/hand@2x.png") no-repeat bottom left / contain;
   }
-
   .header-container {
-    background: url("../images/header@2x.jpg") no-repeat;
-    background-size: contain;
+    background: url("../images/header@2x.jpg") no-repeat top left / cover;
   }
 }
 
 @media screen and (min-resolution: 3dppx) {
   .hand-container {
-    background: url("../images/hand@3x.png") no-repeat;
-    background-size: contain;
+    background: url("../images/hand@3x.png") no-repeat bottom left / contain;
   }
-
   .header-container {
-    background: url("../images/header@3x.jpg") no-repeat;
-    background-size: contain;
+    background: url("../images/header@3x.jpg") no-repeat top left / cover;
   }
 }
 
@@ -193,15 +185,15 @@ input:focus {
   .response {
     padding-top: 15px;
     font-weight: 600;
-    font-size: 2em;
+    font-size: 5.5vmin;
   }
 
   .header-container {
     position: relative;
   }
 
-  #cellphone {
-    position: absolute;
+  .cellphone {
+    display: block;
     bottom: 0;
     left: 0;
     right: 0;
@@ -295,6 +287,7 @@ input:focus {
 
   #logo {
     position: absolute;
+    height: 10vh;
     bottom: 0;
     left: 0;
   }
@@ -305,7 +298,7 @@ input:focus {
   }
 
   /* Text */
-  #cellphone {
+  .cellphone {
     display: none;
   }
 
@@ -315,6 +308,7 @@ input:focus {
 
   .header-container {
     position: relative;
+    max-height: 66vh;
   }
 
   .text-container-header {
@@ -329,22 +323,23 @@ input:focus {
     height: auto;
     text-align: center;
     font-weight: 600;
+    font-size: 3.5vw;
   }
 
   .text-header {
     width: 100%;
     height: auto;
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .star-header {
-    font-size: 1.5em;
+    font-size: 0.75em;
   }
 
   .response {
     padding-top: 10px;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 2vw;
     position: absolute;
     width: 100%;
   }
@@ -352,7 +347,10 @@ input:focus {
   input, .button {
     flex: 1;
     margin-right: 2px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     font-size: 20px;
+    font-size: 3vmin;
     padding: 10px 15px;
   }
 
@@ -376,7 +374,7 @@ input:focus {
 
 /* Tablet format */
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .hand-container {
+  .hand-container img {
     width: 35%;
   }
 
@@ -388,12 +386,17 @@ input:focus {
 
 /* Desktop format */
 @media screen and (min-width:1024px) {
-  .hand-container {
-    width: 25%;
+  .hand-container img {
+    width: 30%;
   }
 
   #logo {
     margin-left: 20%;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .hand-container img {
+    width: 25%;
+  }}
 /* End Desktop format */

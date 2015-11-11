@@ -9,7 +9,7 @@ function onResize() {
   var isSmall = headerImage.attr('src').indexOf('small') > -1;
 
   if (width >= 768 && isSmall) {
-    headerImage.attr('src', './images/header.jpg');
+    headerImage.attr('src', './images/header@1x.jpg');
   } else if (width < 768 && !isSmall) {
     headerImage.attr('src', './images/header-small.png');
   }
