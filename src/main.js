@@ -39,7 +39,7 @@ function validateForm() {
 
 function setError(error) {
   var response = $('#form-response');
-  response.children('span').text(error);
+  response.children('p').text(error);
   response.removeClass('success');
   response.removeClass('hidden');
   $('#phoneNumber').addClass('error');
@@ -47,7 +47,7 @@ function setError(error) {
 
 function setSuccess(success) {
   var response = $('#form-response');
-  response.children('span').text(success);
+  response.children('p').text(success);
   response.addClass('success');
   response.removeClass('hidden');
   $('#phoneNumber').removeClass('error');
@@ -66,7 +66,7 @@ $(document).ready(function() {
       return;
     }
 
-    var url = 'https://roundup-beta.herokuapp.com/waitingList';
+    var url = 'https://api.letsroundup.com/waitingList';
     var phoneNumber = $('#phoneNumber').val();
     $('.button').removeClass('enabled');
 
@@ -83,9 +83,17 @@ $(document).ready(function() {
           setSuccess('Thanks! We\'ll text you when it\'s your turn.');
         }
       },
-      error: function(data) {
-        var text = JSON.parse(data.responseText);
-        setError(text && text.error);
+      error: function(data, status, error) {
+        console.error(data);
+        var text;
+        try {
+          text = JSON.parse(data.responseText);
+          text = text && text.error;
+        } catch (ex) {
+          console.error(ex);
+          text = 'Oops, an error occured, please try again later!';
+        }
+        setError(text);
         $('.button').addClass('enabled');
       }
     });

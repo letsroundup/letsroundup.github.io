@@ -147,7 +147,7 @@ input:focus {
   }
 
   .hand-container {
-    margin: 20px 20px 0 20px;
+    margin: 0 5vw;
     width: 70%;
     height: auto;
   }
@@ -162,7 +162,7 @@ input:focus {
     padding: 0 50px;
   }
 
-  #logo {
+  .logo {
     width: 100%;
     height: auto;
   }
@@ -216,11 +216,22 @@ input:focus {
     margin-left: 4px;
   }
 
-  .response > span {
+  .response > p {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 5px 10px;
     margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .roundup-text {
+    display: none;
+  }
+  .roundup-text-mobile {
+    padding: 5vh 5vw;
+    font-size: 6vw;
+    text-align: center;
   }
 }
 
@@ -273,6 +284,20 @@ input:focus {
 
   .form-container {
     position: relative;
+    justify-content: center;
+    position: relative;
+    height: 34vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .roundup-text {
+    font-size: 4vmin;
+    margin-bottom: 2vh;
+    margin-right: 5vw;
+  }
+  .roundup-text-mobile {
+    display: none;
   }
 
   #header {
@@ -288,10 +313,10 @@ input:focus {
     height: auto;
   }
 
-  #logo {
+  .logo {
     position: absolute;
     height: 10vh;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
   }
 
@@ -381,7 +406,7 @@ input:focus {
     width: 35%;
   }
 
-  #logo {
+  .logo {
     margin-left: 20%;
   }
 }
@@ -393,7 +418,7 @@ input:focus {
     width: 30%;
   }
 
-  #logo {
+  .logo {
     margin-left: 20%;
   }
 }
