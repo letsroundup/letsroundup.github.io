@@ -1,4 +1,6 @@
-require('./analytics');
+if (process.env.NODE_ENV === 'production') {
+  require('./analytics');
+}
 require('./main.css');
 var $ = require('jquery');
 
