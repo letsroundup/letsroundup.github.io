@@ -42,7 +42,7 @@ html {
     display: none;
 }
 .pace .pace-progress {
-    background: #5ADB96;;
+    background: #5ADB96;
     position: fixed;
     z-index: 99999;
     top: 0;
@@ -288,7 +288,6 @@ h6{
     outline: none;
 }
 .navbar-nav li.active a,.navbar-nav li a:hover {
-    // color: #29282b;
     font-weight: 500;
     color: #0BA6F2;
 }
